@@ -24,6 +24,14 @@ First, test if you already have internet connection, so run:
 ping google.com
 ```
 
+If your ethernet is not working then try the following:
+
+```
+ip link 
+```
+
+This will show you a number that looks something like  enp39s0
+
 ## Update System Clock
 
 ``` sh
@@ -41,6 +49,409 @@ In my case, I'll install arch on `/dev/sda` disk. You partition table should loo
 | sda2 | `swap`    | 8G              | swap |
 | sda3 | `/`       | 100G            | ext4 |
 | sda4 | `/home`   | Remaining space | ext4 |
+
+**First list your disks**
+
+```
+fdisk -l
+```
+You should see your disk in here mine is called /dev/sda (WARNING do not write to any of these disks unless you know it's the one you want to install Arch on)
+
+**Now choose the disk you wish to partition**
+
+``` 
+fdisk /dev/sda
+```
+
+You should now be in the fdisk utility you can press `m` for help
+
+All of uor partitions will be **GPT** partitions so you can press `g` when ready
+
+We will be create 4 partitions for the following:
+
+- boot
+- swap
+- root
+- home
+
+## Format the partitions:
+
+We have to create 4 files systems here, so let's get started
+
+- Format the EFI partition with:
+
+``` 
+mkfs.fat -F32 /dev/sda1
+```
+
+- Create a swap file
+
+```
+mkswap /dev/sda2
+swapon /dev/sda2
+```
+
+- Format the Root partition with:
+
+``` 
+mkfs.ext4 /dev/sda3
+```
+
+- Format the Home partition with:
+
+``` 
+mkfs.ext4 /dev/sda4
+```
+
+## Mount the filesystems
+
+You will need to mount sda1, sda3 and sda4, but you need to mount Root first
+
+- Mount sda3 (ROOT)
+
+``` 
+mount /dev/sda3 /mnt
+```
+- Mount sda1 (BOOT)
+```
+mkdir /mnt/boot/efi
+mount /dev/sda1 /mnt/boot/efi
+``` 
+- Mount sda4 (Home)
+
+```
+mkdir /mnt/home
+mount /dev/sda4 /mnt/home
+```
+
+### Check mounts are correct
+
+You can run `df` to make sure your mounts are in the right place
+
+## Install essential packages (and a few others)
+
+Run the following:
+
+```
+pacstrap /mnt base base-devel linux linux-firmware vim intel-ucode sudo linux-headers networkmanager git
+```
+If you have an intel processor also include `intel-ucode`, for AMD `amd-ucode`
+
+## Configure the system
+
+### Fstab
+
+Generate UUIDs for newly created filesystem
+
+```
+genfstab -U /mnt >> /mnt/etc/fstab
+```
+
+You can check that it worked by printing the file:
+
+```
+cat /mnt/etc/fstab
+```
+
+### Chroot
+
+Now you can change root into the new system:
+
+```
+arch-chroot /mnt
+```
+
+### Time zone
+
+Set the time zone:
+
+```
+ln -sf /usr/share/zoneinfo/Region/City /etc/localtime
+```
+
+For example,
+
+```
+ln -sf /usr/share/zoneinfo/Asia/Ho_Chi_Minh /etc/localtime
+```
+Just search through /usr/share/zoneinfo until you find your nearest City
+
+Run `hwclock`:
+
+```
+hwclock --systohc
+```
+### Localization
+
+Uncommnent `en_US.UTF-8 UTF-8` and other needed locales with:
+
+```
+vim /etc/locale.gen
+```
+
+```
+locale-gen
+```
+
+Create the `locale.conf` file, and set LANG variable
+
+```
+touch /etc/locale.conf
+
+echo LANG=en_US.UTF-8 >> /etc/locale.conf
+```
+
+## Network configuration
+
+Create `hostname` file:
+
+```
+touch /etc/hostname
+
+echo myhostname >> /etc/hostname
+```
+
+In my case, I will name myhostname with `machine`. You can call it anything you want
+
+Add matching entries to `hosts`
+
+```
+vim /etc/hosts
+
+127.0.0.1	  localhost
+::1		      localhost
+127.0.1.1	  myhostname.localdomain  myhostname
+```
+
+Note, Your terminal will display with `username@myhostame`
+
+## Root password
+
+Change the root password:
+
+```
+passwd
+```
+
+## Boot loader
+
+We'll be using grub because it has the biggest presence in the boot loader world
+
+```
+pacman -S grub efibootmgr os-prober mtools
+```
+
+Now let's install our boot loader
+
+```
+grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=GRUB
+```
+
+Generate our config
+
+```
+grub-mkconfig -o /boot/grub/grub.cfg
+```
+
+## Add a user
+
+- Add user
+
+```sh
+useradd -m -g wheel <your_user>
+```
+
+- Create password
+
+```sh
+passwd <your_user>
+```
+
+## Switch users
+
+To switch to your user run:
+
+```sh
+su <your_user>
+```
+
+## Giving your user access to sudo
+
+Make sure you have `vi` installed
+
+Enter:
+
+```sh
+visudo
+```
+
+and uncomment this line so it looks like this
+
+```sh
+%wheel ALL=(ALL) ALL
+```
+
+if you hate typing your password everytime like me do this instead
+
+```sh
+%wheel ALL=(ALL) NOPASSWD: ALL
+```
+
+## Installing more packages
+
+Here we can install a few more packages for networking and things like man pages
+
+```
+pacman -S man-db man-pages texinfo inetutils netctl dhcpcd networkmanager wpa_supplicant dialog linux-headers network-manager-applet
+```
+
+## You're done
+
+Enter `exit` then `reboot`
+
+```
+exit
+umount -a
+reboot
+```
+
+## After Rebooting,
+
+We need to switch root in order to enable network 
+
+## Setup your network
+
+```
+ping archlinux.org
+```
+## Enable NetworkManager service
+
+```
+systemctl start NetworkManager
+
+systemctl enable NetworkManager
+```
+
+## Enable internet service
+
+```
+systemctl start dhcpcd.service
+
+systemctl enable dhcpcd.service
+```
+
+## Connect to Network
+
+```
+nmtui
+```
+
+## Install Xorg
+
+```
+pacman -S xorg-server xorg-xinit
+```
+
+## Installing a DM
+
+```
+pacman -S lightdm
+
+pacman -S lightdm-gtk-greeter
+
+pacman -S lightdm-gtk-greeter-settings
+```
+
+## Enable lightdm service
+
+```
+systemctl enable lightdm
+```
+
+## List our enabled services
+
+```
+systemctl list-unit-files --state=enabled
+```
+
+## Install i3wm (or any WM or DE)
+
+```
+pacman -S i3 dmenu feh pulseaudio-alsa pulseaudio-bluetooth pulseaudio-equalizer pulseaudio-jack alsa-utils playerctl xterm rxvt-unicode
+```
+
+### Enable `pulseaudio`
+
+``` 
+systemctl --user enable pulseaudio
+```
+
+I'm using i3 but you can install any WM or DE you like best
+
+Here are some WM options:
+
+- dwm
+- awesome
+- bspwm
+- xmonad
+
+Here are some DE options:
+
+- XFCE
+- KDE
+- Gnome
+
+### Install DE (Optional)
+
+```
+pacman -S xfce4
+```
+
+## Install a terminal emulator
+
+```
+pacman -S alacritty
+```
+
+I'm using Alacritty but you can install any terminal emulator you want
+
+Here are some options:
+
+- st
+- rxvt-unicode
+- termite
+- terminator
+
+## Install Fonts
+
+```
+pacman -S ttf-dejavu ttf-droid ttf-hack ttf-font-awesome ttf-lato ttf-liberation ttf-linux-libertine ttf-opensans ttf-roboto ttf-ionicons ttf-nerd-fonts-symbols ttf-bitstream-vera ttf-croscore noto-fonts ttf-ibm-plex
+```
+
+## Install AUR
+```
+git clone https://aur.archlinux.org/yay.git
+cd yay
+makepkg -si
+cd ..
+sudo rm -rfv yay
+```
+
+## Install Browser
+
+We will install `Brave` 
+
+``` 
+yay -S brave
+```
+
+Note, choose `brave-bin`
+
+You can now reboot into your new system!
+
+```
+reboot
+```
 
 
 ## Reference
