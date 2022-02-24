@@ -81,3 +81,4 @@
 
 ## Reference
 - [AUI Arch linux installer](https://github.com/helmuthdu/aui)
+- [arch-install - Simple Arch Linux Install Script](https://github.com/tom5760/arch-install)
