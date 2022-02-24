@@ -96,9 +96,7 @@ timedatectl status
 
 ## Partition the Disk
 
-You partition table should look like this (size may vary):
-
-In my case, I'll install arch on `/dev/sda` disk
+In my case, I'll install arch on `/dev/sda` disk. You partition table should look like this (size may vary):
 
 | Name | Partition | Size            | Type |
 | :--: | :-------: | :-------------: | :--: |
