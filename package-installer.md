@@ -42,11 +42,9 @@ Frist off, start by installing zshrc and fonts for terminal
 $ sudo pacman -Sy --needed zsh
 ```
 Then install oh-my-zsh
-
 ```
-$ sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 ```
-
 
 #### Download Terminal Tools
 
