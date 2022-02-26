@@ -7,12 +7,12 @@
 ```
 sudo pacman -Sy pulseaudio pulseaudio-alsa pavucontrol bluez bluez-utils alsa-lib alsa-plugins alsa-utils
 ```
-
 #### Graphic Drivers
 
 ```
 $ sudo pacman -Sy libgl xf86-video-intel xf86-video-vesa mesa libva-intel-driver nvidia nvidia-settings nvidia-utils
 ```
+#### Neofetch and htop
 
 ```
 # sudo pacman -Sy htop neofetch
@@ -45,6 +45,26 @@ Then install oh-my-zsh
 ```
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 ```
+- **How to install zsh-autosuggestions and Syntax Highlighting**
+
+Install zsh-autosuggestions by running:
+
+``` 
+$ git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+```
+Install zsh-syntax-highlighting by running:
+
+```
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/plugins/zsh-syntax-highlighting
+```
+Now, open `.zshrc` file with your favourite editor:
+
+And simply add `zsh-autosuggestions` & `zsh-syntax-highlighting` to `plugins()` section, it will do the magic for you:
+
+```
+plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
+```
+### Instaling Packages using `yay -Sy`
 
 #### Download Terminal Tools
 
@@ -52,8 +72,6 @@ sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/i
 - `curl` Download web content to stdout
 
 ``` 
-$ sudo pacman -Sy wget curl
+$ yay -Sy wget curl
 ```
-
-### Instaling Packages using `yay -Sy`
 
