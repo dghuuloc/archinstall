@@ -128,6 +128,30 @@ mount /dev/sda4 /mnt/home
 
 You can run `df` to make sure your mounts are in the right place
 
+## Check The Mirror List
+
+### 1.Start by syncing the `pacman` repository:
+
+```
+pacman -Syy
+```
+### 2. Installing a reflector
+
+```
+pacman -S reflector
+```
+### 3. Create a backup of the mirror list:
+
+``` 
+cp /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.bak
+```
+
+### 4. Use the reflector to update the mirror list:
+
+```
+reflector -c "Vietnam" -c "Singapore" -c "Japan" -c "India" -f 12 -l 10 -n 12 --save /etc/pacman.d/mirrorlist
+```
+
 ## Install essential packages (and a few others)
 
 Run the following:
@@ -314,6 +338,13 @@ exit
 umount -a
 reboot
 ```
+or
+
+```
+exit
+umount -R /mnt
+reboot
+```
 
 ## After Rebooting,
 
@@ -339,6 +370,7 @@ systemctl start dhcpcd.service
 
 systemctl enable dhcpcd.service
 ```
+
 
 ## Connect to Network
 
