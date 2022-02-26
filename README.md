@@ -151,6 +151,10 @@ cp /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.bak
 ```
 reflector -c "Vietnam" -c "Singapore" -c "Japan" -c "India" -f 12 -l 10 -n 12 --save /etc/pacman.d/mirrorlist
 ```
+### 5. Enable reflector
+
+```
+systemctl enable reflector.timer
 
 ## Install essential packages (and a few others)
 
@@ -342,7 +346,7 @@ if you hate typing your password everytime like me do this instead
 Here we can install a few more packages for networking and things like man pages
 
 ```
-pacman -S man-db man-pages texinfo inetutils netctl dhcpcd networkmanager wpa_supplicant dialog linux-headers network-manager-applet
+pacman -S man-db man-pages texinfo inetutils netctl dhcpcd networkmanager wpa_supplicant dialog linux-headers network-manager-applet mtools dosfstools xdg-user-dirs xdg-utils cups pipewire pipewire-alsa pipewire-pulse pipewire-jack bash-completion acpi acpid terminus-font
 ```
 
 ## You're done
@@ -374,9 +378,9 @@ ping archlinux.org
 ## Enable NetworkManager service
 
 ```
-systemctl start NetworkManager
+systemctl start NetworkManager.service
 
-systemctl enable NetworkManager
+systemctl enable NetworkManager.service
 ```
 
 ## Enable internet service
@@ -417,7 +421,9 @@ Here are GDM Display Manager options:
 
 ```
 [root@archiso /]# pacman -S gdm
+
 systemctl enable gdm.service
+systemctl start gdm.service
 ```
 ## Enable lightdm service
 
