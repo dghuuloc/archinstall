@@ -23,8 +23,16 @@ $ sudo pacman -Sy libgl xf86-video-intel xf86-video-vesa mesa libva-intel-driver
 ```
 sudo pacman -S --noconfirm ttf-ms-fonts ttf-dejavu ttf-liberation ttf-kochi-substitute ttf-ubuntu-font-family ttf-droid ttf-google-webfonts ttf-roboto
 ```
+Most modern Linux Distros use the fontconfig library to search specific directories for new fonts when the distribution is booted up:
 
-Install Nerd Fonts 
+```
+# Default Font Paths for fontconfig:
+/usr/share/fonts/
+~/.local/share/fonts/
+```
+The first path is for a global install for all users, the second is for a local install for one specific user (‘ ~ ‘ would be their home directory).
+
+**Install Nerd Fonts** 
 
 ```
 git clone https://github.com/ryanoasis/nerd-fonts.git
