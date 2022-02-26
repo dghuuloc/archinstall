@@ -5,7 +5,7 @@
 ### Audio
 
 ```
-sudo pacman -Sy pulseaudio pulseaudio-alsa pavucontrol bluez bluez-utils lib32-alsa-lib lib32-alse-plugins alsa-lib alsa-plugins alsa-utils
+sudo pacman -Sy pulseaudio pulseaudio-alsa pavucontrol bluez bluez-utils alsa-lib alsa-plugins alsa-utils
 ```
 
 #### Graphic Drivers
@@ -39,7 +39,7 @@ sudo rm -rfv nerd-fonts
 Frist off, start by installing zshrc and fonts for terminal
 
 ```
-$ sudo pacman -Sy --needed zsh zsh-completions zsh-completions zsh-autosuggestions zsh-syntax-highlighting ttf-nerd-fonts-symbols
+$ sudo pacman -Sy --needed zsh
 ```
 Then install oh-my-zsh
 
@@ -58,3 +58,4 @@ $ sudo pacman -Sy wget curl
 ```
 
 ### Instaling Packages using `yay -Sy`
+
