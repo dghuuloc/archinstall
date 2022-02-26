@@ -2,6 +2,18 @@
 
 # Arch Linux Fast Installer
 
+ln -sf /usr/share/zoneinfo/Asia/Ho_Chi_minh /etc/localtime
+hwclock --systohc
+locale-gen
+
+echo "LANG=en_US.UTF-8" >> /etc/locale.conf
+echo "KEYMAP=de_CH-latin1" >> /etc/vconsole.conf
+echo "asusarch" >> /etc/hostname
+echo "127.0.0.1 localhost" >> /etc/hosts
+echo "::1       localhost" >> /etc/hosts
+echo "127.0.1.1 arch.localdomain arch" >> /etc/hosts
+
+
 echo "--------------------------------------"
 echo "-- Arch Install on Main Drive       --"
 echo "--------------------------------------"
