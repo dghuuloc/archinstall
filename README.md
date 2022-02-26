@@ -114,8 +114,8 @@ mount /dev/sda3 /mnt
 ```
 - Mount sda1 (BOOT)
 ```
-mkdir /mnt/boot/efi
-mount /dev/sda1 /mnt/boot/efi
+mkdir /mnt/boot
+mount /dev/sda1 /mnt/boot
 ``` 
 - Mount sda4 (Home)
 
@@ -203,8 +203,14 @@ Just search through /usr/share/zoneinfo until you find your nearest City
 Run `hwclock`:
 
 ```
-hwclock --systohc
+hwclock --systohc --utc
 ```
+And check the time
+
+```
+date
+```
+
 ### Localization
 
 Uncommnent `en_US.UTF-8 UTF-8` and other needed locales with:
@@ -264,17 +270,27 @@ We'll be using grub because it has the biggest presence in the boot loader world
 ```
 pacman -S grub efibootmgr os-prober mtools
 ```
+Create the directory where EFI partition will be mounted
 
+```
+[root@archiso /]# mkdir /boot/
+```
+
+Mount the ESP partition
+
+```
+[root@archiso /]# mount /dev/sda1 /boot/efi
+```
 Now let's install our boot loader
 
 ```
-grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=GRUB
+[root@archiso /]# grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=GRUB
 ```
 
-Generate our config
+Finally, generate the /boot/grub/grub.cfg file
 
 ```
-grub-mkconfig -o /boot/grub/grub.cfg
+[root@archiso /]# grub-mkconfig -o /boot/grub/grub.cfg
 ```
 
 ## Add a user
@@ -370,18 +386,22 @@ systemctl start dhcpcd.service
 
 systemctl enable dhcpcd.service
 ```
-
-
 ## Connect to Network
 
 ```
 nmtui
 ```
 
-## Install Xorg
+## Install the Xorg display server
 
 ```
-pacman -S xorg-server xorg-xinit
+pacman -S xorg xorg-server xorg-xinit
+```
+
+## Install the Xorg Terminal
+
+```
+pacman -S xterm
 ```
 
 ## Installing a DM
@@ -393,7 +413,12 @@ pacman -S lightdm-gtk-greeter
 
 pacman -S lightdm-gtk-greeter-settings
 ```
+Here are GDM Display Manager options:
 
+```
+[root@archiso /]# pacman -S gdm
+systemctl enable gdm.service
+```
 ## Enable lightdm service
 
 ```
@@ -409,7 +434,14 @@ systemctl list-unit-files --state=enabled
 ## Install i3wm (or any WM or DE)
 
 ```
-pacman -S i3 dmenu feh pulseaudio-alsa pulseaudio-bluetooth pulseaudio-equalizer pulseaudio-jack alsa-utils playerctl xterm rxvt-unicode
+pacman -S i3 dmenu feh rofi
+echo "exec i3 >> ~/.xinitrc
+```
+
+## Install audio
+
+```
+pacman -S pulseaudio pulseaudio-alsa pulseaudio-bluetooth pulseaudio-equalizer pulseaudio-jack alsa-utils playerctl
 ```
 
 ### Enable `pulseaudio`
