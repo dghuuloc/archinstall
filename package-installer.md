@@ -5,7 +5,7 @@
 ### Audio
 
 ```
-sudo pacman -Sy pulseaudio pulseaudio-alsa pavucontrol bluez-utils lib32-alsa-lib lib32-alse-plugins alsa-lib alsa-plugins alsa-utils
+sudo pacman -Sy pulseaudio pulseaudio-alsa pavucontrol bluez bluez-utils lib32-alsa-lib lib32-alse-plugins alsa-lib alsa-plugins alsa-utils
 ```
 
 #### Graphic Drivers
