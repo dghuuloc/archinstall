@@ -84,7 +84,7 @@ One important thing we must do the first time we use ranger, is to copy the defa
 ```
 $ ranger --copy-config=all
 ```
-Visualize hidden files. In the `rc.cong` file in ranger directory, we uncomment this code line
+Visualize hidden files. In the `rc.cong` file in ranger directory, we set this following code:
 
 ```
 set show hidden true
