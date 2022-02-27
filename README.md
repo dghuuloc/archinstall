@@ -155,6 +155,7 @@ reflector -c "Vietnam" -c "Singapore" -c "Japan" -c "India" -f 12 -l 10 -n 12 --
 
 ```
 systemctl enable reflector.timer
+```
 
 ## Install essential packages (and a few others)
 
