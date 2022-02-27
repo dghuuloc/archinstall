@@ -87,4 +87,16 @@ $ yay -Sy wget curl
 ```
 $ yay -S visual-studio-code-bin
 ```
+#### Install Polybar
+
+```
+$ yay -S polybar
+```
+Note, We will install `polybar-bin`
+
+On i3 side, there is a definition for launching polybar
+
+```
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+```
 
