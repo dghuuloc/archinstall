@@ -87,7 +87,7 @@ $ yay -Sy wget curl
 ```
 $ yay -S visual-studio-code-bin
 ```
-#### Install Polybar
+#### [Install Polybar](https://computingforgeeks.com/install-polybar-status-bar-on-fedora/)
 
 ```
 $ yay -S polybar
