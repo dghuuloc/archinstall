@@ -89,6 +89,13 @@ Visualize hidden files. In the `rc.cong` file in ranger directory, we set this f
 ```
 set show hidden true
 ```
+#### Zathura
+
+A vim-like document viewer that supports many types of files including EPUBs, PDFs, and even Comic Books
+
+```
+$ sudo pacman -Sy zathura --noconfirm
+```
 
 ### Instaling Packages using `yay -Sy`
 
