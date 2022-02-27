@@ -82,4 +82,9 @@ plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
 ``` 
 $ yay -Sy wget curl
 ```
+#### Install VSCode
+
+```
+$ yay -S visual-studio-code-bin
+```
 
