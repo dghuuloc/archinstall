@@ -72,6 +72,24 @@ And simply add `zsh-autosuggestions` & `zsh-syntax-highlighting` to `plugins()` 
 ```
 plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
 ```
+#### [Ranger Fie Manager](https://linuxconfig.org/introduction-to-ranger-file-manager)
+
+We can install `ranger` package from the Community repository by using the `pacman` package manager:
+
+```
+$ sudo pacman -Sy ranger
+```
+One important thing we must do the first time we use ranger, is to copy the default configuration files in the local `~/.config/ranger` directory
+
+```
+$ ranger --copy-config=all
+```
+Visualize hidden files. In the `rc.cong` file in ranger directory, we uncomment this code line
+
+```
+set show hidden true
+```
+
 ### Instaling Packages using `yay -Sy`
 
 #### Download Terminal Tools
