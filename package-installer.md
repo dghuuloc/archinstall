@@ -96,6 +96,17 @@ A vim-like document viewer that supports many types of files including EPUBs, PD
 ```
 $ sudo pacman -Sy zathura --noconfirm
 ```
+#### Flameshot
+
+```
+$ sudo pacman -Sy flameshot --noconfirm
+```
+
+Use flameshot in terminal
+
+```
+$ flameshot gui
+```
 
 ### Instaling Packages using `yay -Sy`
 
