@@ -160,4 +160,9 @@ On i3 side, there is a definition for launching polybar
 ```
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 ```
+#### ColorPicker
+
+```
+yay -Sy colorpicker
+```
 
