@@ -21,7 +21,7 @@ $ sudo pacman -Sy libgl xf86-video-intel xf86-video-vesa mesa libva-intel-driver
 #### Fonts
 
 ```
-sudo pacman -S --noconfirm ttf-ms-fonts ttf-dejavu ttf-liberation ttf-kochi-substitute ttf-ubuntu-font-family ttf-droid ttf-google-webfonts ttf-roboto
+sudo pacman -S --noconfirm ttf-ms-fonts ttf-dejavu ttf-liberation ttf-kochi-substitute ttf-ubuntu-font-family ttf-droid ttf-google-webfonts ttf-roboto ttf-opensans ttf-proggy-clean ttf-roboto ttf-monoid ttf-nerd-fonts-symbols
 ```
 Most modern Linux Distros use the fontconfig library to search specific directories for new fonts when the distribution is booted up:
 
@@ -34,14 +34,20 @@ The first path is for a global install for all users, the second is for a local 
 
 **Install Nerd Fonts** 
 
-```
-git clone https://github.com/ryanoasis/nerd-fonts.git
-cd nerd-fonts
-./install.sh
-makepkg -si
-sudo rm -rfv nerd-fonts
-```
+- Install nerd-fonts-hack:
 
+```
+git clone https://aur.archlinux.org/nerd-fonts-hack.git
+cd nerd-fonts-hack
+makepkg -si
+cd $HOME
+sudo rm -rfv nerd-fonts-hack
+```
+- Install code fonts
+
+```
+yay -S nerd-fonts-fira-code
+```
 #### ZSH
 
 Frist off, start by installing zshrc and fonts for terminal
