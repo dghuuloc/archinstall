@@ -46,8 +46,27 @@ sudo rm -rfv nerd-fonts-hack
 - Install code fonts
 
 ```
-yay -S nerd-fonts-fira-code
+yay -S nerd-fonts-fira-code nerd-fonts-hermit
 ```
+If youhave added the fonts to system-wide (i.e. `usr/share/fonts/` or `usr/loacl/share/fonts/` location), run:
+
+```
+sudo fc-cache -fv
+```
+
+##### Add Glyphs In Your Code With Nerd Fonts
+
+I am going to download Font Linux icons using command:
+
+```
+$ wget https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/bin/scripts/lib/i_linux.sh -P ~/.local/share/fonts/
+```
+Source the download script:
+
+```
+$ source ~/.local/share/fonts/i_linux.sh
+```
+
 #### ZSH
 
 Frist off, start by installing zshrc and fonts for terminal
