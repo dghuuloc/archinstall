@@ -133,6 +133,14 @@ Use flameshot in terminal
 $ flameshot gui
 ```
 
+#### Install ripgrep Tool
+
+Ripgrep is a line oriented search tool which combines the usefulness of the silver searcher and the speed of GNU grep.
+
+```
+sudo pacman -Sy ripgrep
+```
+
 ### Instaling Packages using `yay -Sy`
 
 #### Download Terminal Tools
