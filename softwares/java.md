@@ -76,18 +76,14 @@ $ sudo archlinux-java set <target java package name>
 **Configure Java Environment**
 
 ```
-export JAVA_HOME="/urs/lib/jvm/jdk-17/"
-export PATH=\$PATH:\$JAVA_HOME/bin
-
-or 
-export JAVA_HOME=/opt/jdk-17
-export PATH=$PATH:$JAVA_HOME/bin
+export JAVA_HOME="/urs/lib/jvm/java-17-openjdk"
+export PATH="$PATH:$JAVA_HOME/bin"
 ```
 
 #### Example
 
 ``` bash
-$ sudo archlinux-java set java-15-jdk
+$ sudo archlinux-java set java-17-jdk
 ```
 If you have set an invalid Java environment link, use the following command to fix it.
 
