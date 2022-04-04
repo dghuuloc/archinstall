@@ -24,7 +24,7 @@ yay -S jdk
 ```
 After the installation, check the Java version using `java --version` from the terminal.
 
-**Install OpenJDK in Arch**
+**Install OpenJDK in Arch (main)** 
 
 First, search for the extact package name:
 
@@ -36,7 +36,7 @@ Then, use the following command to install the `jdk-openjdk` package
 ``` bash
 $ sudo pacman -S jdk-openjdk
 ```
-**Install OpenJRE in Arch**
+**Install OpenJRE in Arch (main)**
 
 First, search for the extact package name:
 
@@ -73,6 +73,17 @@ You can get the actual package name using the archlinux-java status command.
 ``` bash
 $ sudo archlinux-java set <target java package name>
 ```
+**Configure Java Environment**
+
+```
+export JAVA_HOME="/urs/lib/jvm/jdk-17/"
+export PATH=\$PATH:\$JAVA_HOME/bin
+
+or 
+export JAVA_HOME=/opt/jdk-17
+export PATH=$PATH:$JAVA_HOME/bin
+```
+
 #### Example
 
 ``` bash
