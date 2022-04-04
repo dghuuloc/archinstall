@@ -117,3 +117,6 @@ java: /usr/lib/jvm/java-17-openjdk/bin/java
 ``` bash
 $ sudo rm -rf /usr/local/bin/package-query
 ```
+## References
+
+- [Install/Upgrade Oracle JDK 17 (Java 17 LTS) ](https://www.linuxcapable.com/how-to-install-oracle-jdk-17-java-17-lts-on-linux-mint-20/)
