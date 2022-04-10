@@ -77,7 +77,7 @@ $ sudo archlinux-java set <target java package name>
 
 ```
 export JAVA_HOME="/urs/lib/jvm/java-17-openjdk"
-export PATH="$PATH:$JAVA_HOME/bin"
+export PATH="$JAVA_HOME/bin:$PATH"
 ```
 
 #### Example
@@ -124,6 +124,29 @@ java: /usr/lib/jvm/java-17-openjdk/bin/java
 ``` bash
 $ sudo rm -rf /usr/local/bin/package-query
 ```
+
+## Install Tomcat
+
+```
+$ sudo pacman -Sy maven
+```
+
+**Configure Tomcat Environment**
+
+```
+export CATALINA_HOME="/urs/share/tomcat10"
+export PATH="$CATALINA_HOME/bin:$PATH"
+```
+
+## Install Maven
+
+**Configure Maven Environment**
+
+```
+export MAVEN_HOME="/opt/maven"
+export PATH="$MAVEN_HOME/bin:$PATH"
+```
+
 ## References
 
 - [Install/Upgrade Oracle JDK 17 (Java 17 LTS) ](https://www.linuxcapable.com/how-to-install-oracle-jdk-17-java-17-lts-on-linux-mint-20/)
