@@ -138,6 +138,15 @@ export CATALINA_HOME="/urs/share/tomcat10"
 export PATH="$CATALINA_HOME/bin:$PATH"
 ```
 
+**Config user**
+
+``` xml
+<role rolename="manager-gui"/>
+<uer username="tomcat10" password="passwordm" roles="manager-gui"/>
+<role rolename="admin-gui"/>
+<uer username="tomcat" password="passworda" roles="admin-gui"/>
+```
+
 ## Install Maven
 
 **Configure Maven Environment**
