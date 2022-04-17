@@ -158,4 +158,5 @@ export PATH="$MAVEN_HOME/bin:$PATH"
 
 ## References
 
+- [Full JDK Kits](https://soft.l-t.top/)
 - [Install/Upgrade Oracle JDK 17 (Java 17 LTS) ](https://www.linuxcapable.com/how-to-install-oracle-jdk-17-java-17-lts-on-linux-mint-20/)
