@@ -123,3 +123,7 @@ archlinux-java status
 ```
 archlinux-java set <version>
 ```
+
+# Reference 
+
+- [400 Commands for GNU/Linux](https://blog.desdelinux.net/en/more-than-400-commands-for-gnulinux-that-you-should-know/)
