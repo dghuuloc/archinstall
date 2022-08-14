@@ -15,7 +15,7 @@ sudo pacman -Sy libgl xf86-video-intel xf86-video-vesa mesa libva-intel-driver n
 #### Neofetch and htop
 
 ```
-# sudo pacman -Sy htop neofetch
+sudo pacman -Sy htop neofetch
 ```
 
 #### Fonts
