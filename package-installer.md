@@ -56,7 +56,7 @@ If youhave added the fonts to system-wide (i.e. `usr/share/fonts/` or `usr/loacl
 sudo fc-cache -fv
 ```
 
-##### Add Glyphs In Your Code With Nerd Fonts
+##### Add Glyphs In Your Code With Nerd Fonts (optional)
 
 I am going to download Font Linux icons using command:
 
@@ -141,18 +141,6 @@ Ripgrep is a line oriented search tool which combines the usefulness of the silv
 
 ```
 sudo pacman -Sy ripgrep
-```
-
-### [Install xbacklight](https://linux-packages.com/arch-linux/package/xorg-xbacklight) (Important)
-
-```
-sudo pacman -Syy
-sudo pacman -Syu xorg-xbacklight
-```
-__Uninstall xbacklight__
-
-```
-sudo pacman -Rcns xorg-xbacklight
 ```
 
 ### Instaling Packages using `yay -Sy`
