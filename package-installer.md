@@ -151,14 +151,6 @@ sudo pacman -Sy ripgrep
 
 ### Instaling Packages using `yay -Sy`
 
-#### Download Terminal Tools
-
-- `wget` Download web content
-- `curl` Download web content to stdout
-
-``` 
-yay -Sy wget curl
-```
 #### Install VSCode
 
 ```
