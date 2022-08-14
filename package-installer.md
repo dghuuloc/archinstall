@@ -143,6 +143,18 @@ Ripgrep is a line oriented search tool which combines the usefulness of the silv
 sudo pacman -Sy ripgrep
 ```
 
+### Install xbacklight (Important)
+
+```
+sudo pacman -Syy
+sudo pacman -Syu xorg-xbacklight
+```
+__Uninstall xbacklight__
+
+```
+sudo pacman -Rcns xorg-xbacklight
+```
+
 ### Instaling Packages using `yay -Sy`
 
 #### Download Terminal Tools
@@ -170,6 +182,9 @@ On i3 side, there is a definition for launching polybar
 ```
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 ```
+
+
+
 #### ColorPicker
 
 ```
