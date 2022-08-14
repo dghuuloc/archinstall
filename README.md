@@ -289,7 +289,7 @@ pacman -S grub efibootmgr os-prober mtools
 Create the directory where EFI partition will be mounted
 
 ```
-[root@archiso /]# mkdir /boot/
+[root@archiso /]# mkdir /boot/efi
 ```
 
 Mount the ESP partition
