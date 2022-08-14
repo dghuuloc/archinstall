@@ -143,7 +143,7 @@ Ripgrep is a line oriented search tool which combines the usefulness of the silv
 sudo pacman -Sy ripgrep
 ```
 
-### Install xbacklight (Important)
+### [Install xbacklight](https://linux-packages.com/arch-linux/package/xorg-xbacklight) (Important)
 
 ```
 sudo pacman -Syy
