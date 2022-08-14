@@ -448,7 +448,7 @@ systemctl enable lightdm
 systemctl list-unit-files --state=enabled
 ```
 
-## Install xbacklight (important)
+## [Install xbacklight](https://linux-packages.com/arch-linux/package/xorg-xbacklight) (Important)
 
 ```
 sudo pacman -Syy
