@@ -26,6 +26,17 @@ ping google.com
 
 If your ethernet is not working then try the following:
 
+__Connect to Wifi__
+
+```
+root@archiso ~ # iwctl
+[iwd]# device list
+[iwd]# station wlan0 scan
+[iwd]# station wlan0 get-networks
+[iwd]# station wlan0 connect "Name of Network/WiFi"
+[iwd]# exit
+```
+
 ```
 ip link 
 ```
