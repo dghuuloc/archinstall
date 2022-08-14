@@ -538,7 +538,8 @@ reboot
 
 ## Reference
 - [AUI Arch linux installer](https://github.com/helmuthdu/aui)
-- [arch-install - Simple Arch Linux Install Script](https://github.com/tom5760/arch-install)
+- [Arch-install - Simple Arch Linux Install Script](https://github.com/tom5760/arch-install)
 - [Arch-Linux-Install-Script](https://github.com/Antiz96/Arch-Linux-Install-Script)
--[Arch Linux Installation Guide](https://gist.github.com/eltonvs/d8977de93466552a3448d9822e265e38)
--[How to install Arch Linux](https://github.com/saloniamatteo/Arch#2-partition-the-disk)
+- [Arch Linux Installation Guide](https://gist.github.com/eltonvs/d8977de93466552a3448d9822e265e38)
+- [How to install Arch Linux](https://github.com/saloniamatteo/Arch#2-partition-the-disk)
+- [Arch Linux Install guide](https://gist.github.com/sjsivert/6ab2f353a82970a60badb669d401a963)
