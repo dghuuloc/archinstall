@@ -20,6 +20,8 @@ sudo pacman -Sy htop neofetch
 
 #### Fonts
 
+__Note__: These fonts will stored into /usr/share/fonts
+
 ```
 sudo pacman -S --noconfirm ttf-ms-fonts ttf-dejavu ttf-liberation ttf-kochi-substitute ttf-ubuntu-font-family ttf-droid ttf-google-webfonts ttf-roboto ttf-opensans ttf-proggy-clean ttf-roboto ttf-monoid ttf-nerd-fonts-symbols
 ```
