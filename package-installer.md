@@ -10,7 +10,7 @@ sudo pacman -Sy pulseaudio pulseaudio-alsa pavucontrol bluez bluez-utils alsa-li
 #### Graphic Drivers
 
 ```
-$ sudo pacman -Sy libgl xf86-video-intel xf86-video-vesa mesa libva-intel-driver nvidia nvidia-settings nvidia-utils
+sudo pacman -Sy libgl xf86-video-intel xf86-video-vesa mesa libva-intel-driver nvidia nvidia-settings nvidia-utils
 ```
 #### Neofetch and htop
 
@@ -59,12 +59,12 @@ sudo fc-cache -fv
 I am going to download Font Linux icons using command:
 
 ```
-$ wget https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/bin/scripts/lib/i_linux.sh -P ~/.local/share/fonts/
+wget https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/bin/scripts/lib/i_linux.sh -P ~/.local/share/fonts/
 ```
 Source the download script:
 
 ```
-$ source ~/.local/share/fonts/i_linux.sh
+source ~/.local/share/fonts/i_linux.sh
 ```
 
 #### ZSH
@@ -72,7 +72,7 @@ $ source ~/.local/share/fonts/i_linux.sh
 Frist off, start by installing zshrc and fonts for terminal
 
 ```
-$ sudo pacman -Sy --needed zsh
+sudo pacman -Sy --needed zsh
 ```
 Then install oh-my-zsh
 ```
@@ -83,7 +83,7 @@ sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/i
 Install zsh-autosuggestions by running:
 
 ``` 
-$ git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 ```
 Install zsh-syntax-highlighting by running:
 
@@ -102,12 +102,12 @@ plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
 We can install `ranger` package from the Community repository by using the `pacman` package manager:
 
 ```
-$ sudo pacman -Sy ranger
+sudo pacman -Sy ranger
 ```
 One important thing we must do the first time we use ranger, is to copy the default configuration files in the local `~/.config/ranger` directory
 
 ```
-$ ranger --copy-config=all
+ranger --copy-config=all
 ```
 Visualize hidden files. In the `rc.cong` file in ranger directory, we set this following code:
 
@@ -119,18 +119,18 @@ set show hidden true
 A vim-like document viewer that supports many types of files including EPUBs, PDFs, and even Comic Books
 
 ```
-$ sudo pacman -Sy zathura --noconfirm
+sudo pacman -Sy zathura --noconfirm
 ```
 #### Flameshot
 
 ```
-$ sudo pacman -Sy flameshot --noconfirm
+sudo pacman -Sy flameshot --noconfirm
 ```
 
 Use flameshot in terminal
 
 ```
-$ flameshot gui
+flameshot gui
 ```
 
 #### Install ripgrep Tool
@@ -149,17 +149,17 @@ sudo pacman -Sy ripgrep
 - `curl` Download web content to stdout
 
 ``` 
-$ yay -Sy wget curl
+yay -Sy wget curl
 ```
 #### Install VSCode
 
 ```
-$ yay -S visual-studio-code-bin
+yay -S visual-studio-code-bin
 ```
 #### [Install Polybar](https://computingforgeeks.com/install-polybar-status-bar-on-fedora/)
 
 ```
-$ yay -S polybar
+yay -S polybar
 ```
 Note, We will install `polybar-bin`
 
