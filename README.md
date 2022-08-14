@@ -309,50 +309,6 @@ Finally, generate the /boot/grub/grub.cfg file
 [root@archiso /]# grub-mkconfig -o /boot/grub/grub.cfg
 ```
 
-## Add a user
-
-- Add user
-
-```sh
-useradd -m -g wheel <your_user>
-```
-
-- Create password
-
-```sh
-passwd <your_user>
-```
-
-## Switch users
-
-To switch to your user run:
-
-```sh
-su <your_user>
-```
-
-## Giving your user access to sudo
-
-Make sure you have `vi` installed
-
-Enter:
-
-```sh
-visudo
-```
-
-and uncomment this line so it looks like this
-
-```sh
-%wheel ALL=(ALL) ALL
-```
-
-if you hate typing your password everytime like me do this instead
-
-```sh
-%wheel ALL=(ALL) NOPASSWD: ALL
-```
-
 ## Installing more packages
 
 Here we can install a few more packages for networking and things like man pages
@@ -407,6 +363,49 @@ systemctl enable dhcpcd.service
 ```
 nmtui
 ```
+## Add a user
+
+- Add user
+
+```sh
+useradd -m -g wheel <your_user>
+```
+
+- Create password
+
+```sh
+passwd <your_user>
+```
+
+## Switch users
+
+To switch to your user run:
+
+```sh
+su <your_user>
+```
+
+## Giving your user access to sudo
+
+Make sure you have `vi` installed
+
+Enter:
+
+```sh
+visudo
+```
+
+and uncomment this line so it looks like this
+
+```sh
+%wheel ALL=(ALL) ALL
+```
+
+if you hate typing your password everytime like me do this instead
+
+```sh
+%wheel ALL=(ALL) NOPASSWD: ALL
+```
 
 ## Install the Xorg display server
 
@@ -429,7 +428,7 @@ pacman -S lightdm-gtk-greeter
 
 pacman -S lightdm-gtk-greeter-settings
 ```
-Here are GDM Display Manager options:
+Here are GDM Display Manager (optional)
 
 ```
 [root@archiso /]# pacman -S gdm
@@ -447,6 +446,13 @@ systemctl enable lightdm
 
 ```
 systemctl list-unit-files --state=enabled
+```
+
+## Install xbacklight (important)
+
+```
+sudo pacman -Syy
+sudo pacman -Syu xorg-xbacklight
 ```
 
 ## Install i3wm (or any WM or DE)
