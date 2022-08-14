@@ -2,6 +2,12 @@
 
 ### Instaling Packages using `pacman -Sy`
 
+### Essential packages
+
+```
+sudo pacman -Sy wget curl
+```
+
 ### Audio
 
 ```
