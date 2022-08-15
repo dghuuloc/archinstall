@@ -77,6 +77,16 @@ Icon=dwm
 Type=XSession
 ```
 
+## start dwm
+
+```
+# ~/.xinitrc files are not available and need to be added manually
+vim ~/.xinitrc
+
+# Add the following code to the.xinitrc file
+exec dwm
+```
+
 ## Basic Commands
 
 - Moving between windows: `[Alt]+[j] or [Alt]+[k]`
@@ -165,6 +175,15 @@ sudo make clean install
 sudo cp config.def.h config.h
 sudo make clean install
 sudo systemctl restart lightdm
+```
+
+## Configuration in Details
+
+- If you are using a terminal emulator other than st, you need to modify the following code in the config.def.h file:
+
+```
+/* Modify st to the installed terminal emulator */
+static const char *termcmd[] = { "st", NULL};
 ```
 
 ## Git Overview
