@@ -132,4 +132,18 @@ Using the tools of X.org, this can be set using:
 ```
 xsetroot -name "Some Text"
 ```
-1
+
+## Understanding `config.h` and `config.def.h`
+
+- `config.def.h` is the default configuration, and the one patches modify. `config.h` is the actual configuration that is used when compiling. If no `config.h` file exists, make will create it by copying `config.def.h`.
+
+- Having a default allows patches to change the configuration without merge issues (if no other patches were applied before). Then you can compare the changes with your customized `config.h`.
+
+- `config.h` doesn't exist before `make`, unless you add your own.
+
+- `config.def.h` is the default config that "builds" `config.h` So it's the place where the authors can freely change, and the patches will target.
+
+
+## References
+
+- [Why is there a config.h and config.def.h?]()- [Why is there a config.h and config.def.h?]()
