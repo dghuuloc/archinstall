@@ -146,4 +146,4 @@ xsetroot -name "Some Text"
 
 ## References
 
-- [Why is there a config.h and config.def.h?]()- [Why is there a config.h and config.def.h?]()
+- [Getting Started Dynamic Window Manager (DWM)](https://www.yanboyang.com/dwm/)
