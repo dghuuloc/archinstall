@@ -459,6 +459,7 @@ sudo pacman -Syu xorg-xbacklight
 
 ```
 pacman -S i3 dmenu feh rofi
+cp /etc/X11/xinit/xinitrc ~/.xinitrc
 echo "exec i3 >> ~/.xinitrc
 ```
 
