@@ -145,6 +145,14 @@ xsetroot -name "Some Text"
 
 ## Configuration 
 
+
+
+```
+cp config.def.h config.h
+sudo make clean install
+sudo systemctl restart lightdm
+```
+
 All of configuration should be in config.def.h` file.
 When you mke modified, please run:
 
