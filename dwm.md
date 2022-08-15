@@ -186,6 +186,25 @@ sudo systemctl restart lightdm
 static const char *termcmd[] = { "st", NULL};
 ```
 
+### Change MODKEY
+The default MODKEY is the Alt key.
+
+The MODKEY key is changeable, Mod1Mask represents the Alt key, Mod4Mask represents the Window key.
+
+Press MODKEY+Shift+Enter to start the terminal.
+
+### Add Command & Define Shortcut
+
+For example, Add flameshot snapshot commands and shortcuts.
+
+```
+/* Add Command */
+static const char *flameshot[] = { "flameshot", "gui", NULL};
+
+/* Add Shortcut: mod+s */
+{ MODKEY,       XK_s,      spawn,        {.v = flameshot } },
+```
+
 ## Git Overview
 
 - Git is a distributed version control system
