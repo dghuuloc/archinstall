@@ -5,10 +5,12 @@ tags: ["linux", "dwm"]
 
 Make sure you have a user already
 
-## Install Xorg
+## Requirements:
 
 ```
-pacman -S xorg-server xorg-xinit xorg-xrandr xorg-xsetroot
+sudo pacman -Sy xorg xorg-server xorg-xinit xorg-xrandr xorg-xsetroot
+sudo pacman -Sy nitrogen lxappearance
+yay -Sy picom pnmixer flat-remix-gtk
 ```
 
 ## Install git
@@ -144,8 +146,6 @@ xsetroot -name "Some Text"
 - `config.def.h` is the default config that "builds" `config.h` So it's the place where the authors can freely change, and the patches will target.
 
 ## Configuration 
-
-
 
 ```
 cp config.def.h config.h
