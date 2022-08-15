@@ -205,6 +205,93 @@ static const char *flameshot[] = { "flameshot", "gui", NULL};
 { MODKEY,       XK_s,      spawn,        {.v = flameshot } },
 ```
 
+### DWM patch
+
+Add extra functionality to dwm with patches.
+
+Patch download address: [https://dwm.suckless.org/patches/](https://dwm.suckless.org/patches/)
+
+Patch up
+Place the patch file in the dwm directory.Patch with the patch command.
+
+If the patch fails, it needs to be added manually.
+
+Example:
+
+Patch to hide labels that are not running.
+
+```
+patch < dwm-hide_vacant_tags-6.2.diff
+```
+
+Recommended patches
+
+```
+Transparent patch: alphasystray.diff
+
+Temporary small window: dwm-scratchpad-6.2.diff
+
+Hide empty labels: dwm-hide_vacant_tags-6.2.diff
+
+Window spacing: dwm-vanitygaps-20190508-6.2.diff
+
+Autostart script: dwm-autostart-20161205-bb3bd6f.diff
+
+Window Full Screen: dwm-actualfullscreen-20191112-cb3f58a.diff
+
+The status bar displays multiple window information: dwm-awesomebar-20191003-80e2a76.diff
+```
+
+### Display information on the right side of the status bar
+
+Use the xsetroot command to display the required information on the right side of the dwm status bar.
+
+```
+# Use the xsetroot command to display "hello dwm" on the right side of the status bar
+xsetroot -name "hello dwm"
+```
+
+With the dwm-autostart-20161205-bb3bd6f.diff patch and custom script, you can display the required system information at system startup.
+
+Example:
+
+When the system starts, the system time is displayed on the right side of the status bar.
+
+After typing dwm-autostart-20161205-bb3bd6f.diff, the following code was found in the dwm.c file:
+
+```
+void
+runAutostart(void) {
+  system("cd ~/scripts; ./autostart_blocking.sh")
+  system("cd ~/scripts; ./autostart.sh &")
+}
+```
+
+You can modify to a directory of custom scripts.
+
+```
+void
+runAutostart(void) {
+  system("cd ~/dwm/scripts; ./autostart.sh &")
+}
+```
+
+The contents of the autostart.sh script are as follows:
+
+```
+#!/bin/sh
+
+dwm_date () {
+  date '+%Y year%m month%d day %a %H:%M'
+}
+
+while true
+do
+  xsetroot -name "$(dwm_date)"
+  sleep 1
+done
+```
+
 ## Git Overview
 
 - Git is a distributed version control system
