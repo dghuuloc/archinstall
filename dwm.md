@@ -180,3 +180,4 @@ sudo systemctl restart lightdm
 ## References
 
 - [Getting Started Dynamic Window Manager (DWM)](https://www.yanboyang.com/dwm/)
+- [Tutorial](https://dwm.suckless.org/tutorial/)
