@@ -191,7 +191,14 @@ The default MODKEY is the Alt key.
 
 The MODKEY key is changeable, Mod1Mask represents the Alt key, Mod4Mask represents the Window key.
 
-Press MODKEY+Shift+Enter to start the terminal.
+```
+#define MODKEY Mod1Mask
+```
+by
+
+```
+#define MODKEY Mod4Mask
+```
 
 ### Add Command & Define Shortcut
 
