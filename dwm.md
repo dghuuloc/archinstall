@@ -156,7 +156,18 @@ sudo make clean install
 ```
 sudo cp config.def.h config.h
 sudo make clean install
+sudo systemctl restart lightdm
 ```
+
+## Git Overview
+
+- Git is a distributed version control system
+- Commands we need:
+  - `git clone` (download a repository from the web)
+  - `git branch` and `git switch` (separate changes)
+  - `git add` and `git commit` (register changes)
+  - `git diff` (compare files to last registered version)
+  - `git status`, `git log` (confirm actions)
 
 ## References
 
