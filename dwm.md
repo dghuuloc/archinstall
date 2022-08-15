@@ -143,6 +143,16 @@ xsetroot -name "Some Text"
 
 - `config.def.h` is the default config that "builds" `config.h` So it's the place where the authors can freely change, and the patches will target.
 
+## Configuration 
+
+All of configuration should be in config.def.h` file.
+When you mke modified, please run:
+
+```
+rm config.h
+sudo make clean install
+```
+
 
 ## References
 
