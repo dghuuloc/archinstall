@@ -312,6 +312,10 @@ done
 ## References
 
 - [Template](https://www.youtube.com/watch?v=Kkf68ZRZ5ZU)
+- [How I use dwm](https://ratfactor.com/dwm2)
+- [How to use dwm without dying in the attempt](https://blog.juancastro.xyz/en/posts/dwm/)
+- [dwm: A Minimalist Tiling Window Manager For Linux](https://www.maketecheasier.com/dwm-tiling-window-manager/)
+- [DWM: A newbie's guide](https://sites.google.com/site/lazyboxx/-articles/dwm-a-newbie-s-guide)
 - [Getting Started Dynamic Window Manager (DWM)](https://www.yanboyang.com/dwm/)
 - [Tutorial](https://dwm.suckless.org/tutorial/)
 - [Dave's Visual Guide to dwm](https://ratfactor.com/dwm)
