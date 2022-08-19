@@ -103,6 +103,8 @@ exec dwm
 
 - Click another tag with the right mouse button to bring those windows into your current focus.
 
+- Pressing `[Alt] + [i]` took me back to horizontal split.
+
 ## Layouts
 
 ( **Note** ) By default dwm is in tiled layout mode.
