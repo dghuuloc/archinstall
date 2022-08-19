@@ -103,7 +103,9 @@ exec dwm
 
 - Click another tag with the right mouse button to bring those windows into your current focus.
 
-- Pressing `[Alt] + [i]` took me back to horizontal split.
+- Pressing `[Alt] + [i]` horizontal split. 
+
+- Pressing `[Alt] + [d]` vertical split.
 
 ## Layouts
 
