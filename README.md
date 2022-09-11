@@ -548,6 +548,11 @@ You can now reboot into your new system!
 reboot
 ```
 
+### Switch to console with 
+
+__Go Back	 	LinuxQuestions.org > Forums > Linux Forums > Linux - Distributions > Slackware
+Reload this Page Switching To Console With CTRL+ALT+F2__
+
 
 ## Reference
 - [AUI Arch linux installer](https://github.com/helmuthdu/aui)
