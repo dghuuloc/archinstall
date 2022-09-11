@@ -389,6 +389,12 @@ su <your_user>
 
 Make sure you have `vi` installed
 
+__Note__: Trying If raise error "visudo: no editor found (editor path = /usr/bin/vi)"
+
+```
+ln -s /usr/bin/vim /usr/bin/vi
+```
+
 Enter:
 
 ```sh
