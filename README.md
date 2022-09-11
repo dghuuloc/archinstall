@@ -537,7 +537,7 @@ sudo rm -rfv yay
 We will install `Brave` 
 
 ``` 
-yay -S brave
+yay -S brave-bin
 ```
 
 Note, choose `brave-bin`
